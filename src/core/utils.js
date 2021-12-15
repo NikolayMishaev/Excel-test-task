@@ -1,5 +1,3 @@
-import { delayWriteToLocalStorage } from '../constants.js';
-
 // Pure functions
 export function capitalize(string) {
   if (typeof string !== 'string') {
@@ -15,30 +13,11 @@ export function range(start, end) {
   return new Array(end - start + 1).fill('').map((_, index) => start + index);
 }
 
-// создал ф-ию обертку, для отложенного запуска переданной ф-ии используя замыкание
-function trottle(fn, ms) {
-  let waiting = false;
-  return function (...args) {
-    if (waiting) return;
-    fn.apply(this, args);
-    waiting = true;
-    setTimeout(() => (waiting = false), ms);
-  };
-}
-
-const setLocalStorageWithDelay = trottle(setLocalStorage, delayWriteToLocalStorage);
-
-function setLocalStorage(key, data) {
-  console.log(delayWriteToLocalStorage);
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
 export function storage(key, data = null) {
   if (!data) {
     return JSON.parse(localStorage.getItem(key));
   }
-  // т.к. при получении данных из локал сторадж задержка не нужна, то использую задрержку только для записи в локалсторадж 
-  setLocalStorageWithDelay(key, data);
+  localStorage.setItem(key, JSON.stringify(data));
 }
 
 export function isEqual(a, b) {

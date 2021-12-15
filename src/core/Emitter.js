@@ -5,7 +5,7 @@
 // Изменения в коде могут быть не в этом файле
 
 
-// сделал изменения в файле utils.js , в ф-ии storage, где происходит запись в localStorage
+// сделал изменения в файле LocalStorageClient.js
 
 
 export class Emitter {
