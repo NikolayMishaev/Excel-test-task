@@ -1,11 +1,10 @@
 # Excel
 ***
-[ссылка на gh-pages](https://nikolaymishaev.github.io/Excel-test-task/dist/index.html)
+- [ссылка на gh-pages](https://nikolaymishaev.github.io/excel/dist/index.html)
+- [ссылка на задание](https://disk.yandex.ru/i/EwK3GihvwS8Row)
 
 ## Описание
-Решение заданий в приложении подобии Excel
+- выполнения задания, по условию которого нужно было найти ошибки в коде и устранить их 
 
 ## Функциональность
-
-## Планы по доработке проекта
-
+- приложение работает подобно Microsoft Excel
